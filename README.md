@@ -1,4 +1,4 @@
-# 📧 NoSpamZone : Spam Email Detection System
+# 📧 NoSpamZone System
 
 <div align="center">
 
