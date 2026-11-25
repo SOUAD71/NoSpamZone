@@ -8,7 +8,7 @@
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue?style=for-the-badge&logo=docker)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**An end-to-end Machine Learning project that detects spam emails using NLP and deploys the model as a production-ready web application.**
+**🛡️ Keep your inbox clean — an end-to-end Machine Learning system that detects spam emails using NLP and deploys the model as a production-ready web application.**
 
 [Overview](#-project-overview) • [Demo](#-demo) • [Features](#-features) • [Tech Stack](#️-tech-stack) • [Pipeline](#-project-pipeline) • [Getting Started](#-getting-started) • [Results](#-results)
 
@@ -18,9 +18,11 @@
 
 ## 🎯 Project Overview
 
-This project covers the **complete ML lifecycle** — from data exploration and preprocessing to model training, evaluation, and cloud deployment. The goal is to build a robust binary classifier that takes the content of an email as input and outputs a label: **`spam`** or **`ham`** (not spam).
+**NoSpamZone System** is a complete end-to-end Machine Learning project that covers the **full ML lifecycle** — from data exploration and preprocessing to model training, evaluation, and cloud deployment. The system builds a robust binary classifier that takes the content of an email as input and outputs a label: **`spam`** or **`ham`** (not spam).
 
-Rather than relying on accuracy alone (which is misleading due to class imbalance), this project prioritizes **Precision, Recall, and F1-score** to ensure the model catches spam without misclassifying important legitimate emails.
+Rather than relying on accuracy alone (which is misleading due to class imbalance), NoSpamZone prioritizes **Precision, Recall, and F1-score** to ensure the model catches spam without misclassifying important legitimate emails.
+
+> 🎯 **Mission**: Build a trustworthy spam filter that protects users from unwanted emails without ever losing critical messages.
 
 ---
 
@@ -28,7 +30,7 @@ Rather than relying on accuracy alone (which is misleading due to class imbalanc
 
 <div align="center">
 
-![Spam Detection Demo](docs/images/demo.gif)
+![NoSpamZone Demo](docs/images/demo.gif)
 
 *Paste an email → Get an instant spam/ham prediction with confidence score*
 
@@ -36,13 +38,13 @@ Rather than relying on accuracy alone (which is misleading due to class imbalanc
 
 ---
 
-## 🗺️ Project Pipeline
+## 🗺️ NoSpamZone Pipeline
 
-The diagram below illustrates the complete end-to-end workflow of this project:
+The diagram below illustrates the complete end-to-end workflow of the NoSpamZone System:
 
 <div align="center">
 
-![Project Pipeline](docs/images/pipeline.png)
+![NoSpamZone Pipeline](docs/images/pipeline.png)
 
 </div>
 
@@ -54,7 +56,7 @@ flowchart TD
     D --> E[Phase 4: Model Export<br>& API Development]
     E --> F[Phase 5: Local Testing<br>& Containerization]
     F --> G[Phase 6: Cloud Deployment<br>& Monitoring]
-    G --> H[End: Live, Monitored<br>Application]
+    G --> H[End: Live, Monitored<br>NoSpamZone App]
 ```
 
 > 💡 **Note:** The image `pipeline.png` is located in `docs/images/pipeline.png`. See the [Adding the Pipeline Diagram](#-adding-the-pipeline-diagram) section below for instructions on generating it.
@@ -67,9 +69,10 @@ flowchart TD
 - 🤖 **Multi-Model Comparison** — Trains and evaluates Naive Bayes, Logistic Regression, SVM, Random Forest, and Gradient Boosting classifiers
 - 📊 **Robust Evaluation** — Uses precision, recall, and F1-score (not just accuracy) to handle class imbalance
 - 🔌 **Production API** — RESTful API built with Flask for real-time spam predictions
-- 🖥️ **Interactive Web Interface** — Simple frontend for users to paste email content and get instant classification
+- 🖥️ **Interactive Web Interface** — Clean frontend for users to paste email content and get instant classification
 - 🐳 **Dockerized Deployment** — Fully containerized for reproducible deployment on any cloud platform
 - ✅ **CI/CD Ready** — Automated testing and deployment pipeline
+- 🛡️ **Zero-Leakage Guarantee** — Split-before-engineering methodology prevents data leakage
 
 ---
 
@@ -135,14 +138,14 @@ Raw Data → Train (70%) / Validation (15%) / Test (15%) → Feature Engineering
 | **Linear SVM** ⭐ | **98.4%** | **98.1%** | **97.6%** | **97.8%** |
 | Random Forest | 97.9% | 97.4% | 97.1% | 97.2% |
 
-> ✅ **Final Model**: Linear SVM with TF-IDF features achieved the best F1-score on the test set.
+> ✅ **NoSpamZone Champion Model**: Linear SVM with TF-IDF features achieved the best F1-score on the test set.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-spam-email-detector/
+NoSpamZone-System/
 │
 ├── data/
 │   ├── raw/                  # Original dataset
@@ -174,7 +177,7 @@ spam-email-detector/
 │
 ├── docs/
 │   └── images/
-│       ├── pipeline.png      # ⬅️ Project pipeline diagram
+│       ├── pipeline.png      # ⬅️ NoSpamZone pipeline diagram
 │       └── demo.gif
 │
 ├── Dockerfile
@@ -190,8 +193,8 @@ spam-email-detector/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/spam-email-detector.git
-cd spam-email-detector
+git clone https://github.com/yourusername/NoSpamZone-System.git
+cd NoSpamZone-System
 ```
 
 ### 2. Install dependencies
@@ -204,7 +207,7 @@ pip install -r requirements.txt
 python src/train.py
 ```
 
-### 4. Run the API locally
+### 4. Run the NoSpamZone API locally
 ```bash
 python app/app.py
 ```
@@ -230,19 +233,19 @@ curl -X POST http://localhost:5000/predict \
 
 ```bash
 # Build the image
-docker build -t spam-detector .
+docker build -t nospamzone-system .
 
 # Run the container
-docker run -p 5000:5000 spam-detector
+docker run -p 5000:5000 nospamzone-system
 ```
 
-The API will be available at `http://localhost:5000`.
+The NoSpamZone API will be available at `http://localhost:5000`.
 
 ---
 
 ## ☁️ Cloud Deployment
 
-This project supports one-click deployment on:
+NoSpamZone supports one-click deployment on:
 
 - **Render** — via `render.yaml`
 - **AWS ECS** — via `ecs-task-definition.json`
@@ -260,7 +263,7 @@ The README references two images in `docs/images/`. Here's how to generate them:
 The pipeline is already rendered above using **Mermaid** (GitHub renders it natively). No image needed.
 
 ### Option B — Generate a PNG from the Mermaid diagram
-1. Copy the Mermaid code block from the [Project Pipeline](#-project-pipeline) section
+1. Copy the Mermaid code block from the [NoSpamZone Pipeline](#-nospamzone-pipeline) section
 2. Paste it into the [Mermaid Live Editor](https://mermaid.live/)
 3. Click **"Actions" → "Download PNG"**
 4. Save the file as `docs/images/pipeline.png` in your repo
@@ -299,12 +302,13 @@ pytest tests/ -v
 - [ ] Support multilingual spam detection
 - [ ] Add explainability (SHAP/LIME) to show *why* an email was flagged
 - [ ] Add email header and URL analysis for richer features
+- [ ] Chrome extension for Gmail integration
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/spam-email-detector/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/NoSpamZone-System/issues).
 
 1. Fork the project
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -329,6 +333,8 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ---
 
 <div align="center">
+
+**🛡️ NoSpamZone System — Your Inbox, Protected.**
 
 ⭐ **If you found this project useful, please give it a star!** ⭐
 
